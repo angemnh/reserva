@@ -1,0 +1,75 @@
+<!-- 
+======================================================
+ FORMULARIO DE NUEVA RESERVA
+======================================================
+Permite crear una nueva reserva seleccionando tipo, recurso,
+fecha, horario y una justificación opcional.
+-->
+
+<!-- Encabezado de la página -->
+<app-page-header titulo="Nueva reserva" subtitulo="Selecciona el tipo y recurso"></app-page-header>
+
+<!-- Tarjeta contenedora del formulario -->
+<div class="card shadow-sm">
+    <div class="card-body">
+
+        <!-- Formulario principal -->
+        <form class="row g-3">
+
+            <!-- Tipo de reserva -->
+            <div class="col-md-4">
+                <label class="form-label">Tipo de reserva</label>
+                <select class="form-select">
+                    <option value="TUTORIA">Tutoría</option>
+                    <option value="AUTONOMO">Autónomo</option>
+                </select>
+            </div>
+
+            <!-- Tipo de recurso -->
+            <div class="col-md-4">
+                <label class="form-label">Recurso</label>
+                <select class="form-select">
+                    <option>Laboratorio</option>
+                    <option>Equipo</option>
+                </select>
+                <div class="form-text">* Equipos solo para estudiantes</div>
+            </div>
+
+            <!-- Selección específica -->
+            <div class="col-md-4">
+                <label class="form-label">Seleccionar</label>
+                <select class="form-select">
+                    <option>Lab Redes (B-203)</option>
+                    <option>Lab Hardware (C-101)</option>
+                    <option>Router Cisco 01</option>
+                </select>
+            </div>
+
+            <!-- Fecha y horario -->
+            <div class="col-md-3">
+                <label class="form-label">Fecha</label>
+                <input type="date" class="form-control">
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Hora inicio</label>
+                <input type="time" class="form-control">
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Hora fin</label>
+                <input type="time" class="form-control">
+            </div>
+
+            <!-- Justificación -->
+            <div class="col-12">
+                <label class="form-label">Justificación (solo AUTÓNOMO)</label>
+                <textarea class="form-control" rows="3" placeholder="Explica brevemente la práctica"></textarea>
+            </div>
+
+            <!-- Botones -->
+            <div class="col-12 d-flex gap-2">
+                <button class="btn btn-primary">Enviar solicitud</button>
+                <a routerLink="/reservas" class="btn btn-outline-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>

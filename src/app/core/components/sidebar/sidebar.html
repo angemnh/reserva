@@ -1,0 +1,29 @@
+<!-- 
+Lista de navegación lateral (Sidebar)
+Cada enlace usa routerLink para moverse entre las rutas del sistema.
+Se usa el estilo "list-group" de Bootstrap para dar formato tipo menú.
+-->
+
+<div class="list-group list-group-flush">
+
+    <!-- Enlace al panel principal -->
+    <a routerLink="/dashboard" class="list-group-item list-group-item-action">Dashboard</a>
+
+    <!-- Enlace a la sección de laboratorios -->
+    <a routerLink="/laboratorios" class="list-group-item list-group-item-action">Laboratorios</a>
+
+    <!-- Enlace a la sección de equipos -->
+    <a routerLink="/equipos" class="list-group-item list-group-item-action">Equipos</a>
+
+    <!-- Enlace a la sección de reservas -->
+    <a routerLink="/reservas" class="list-group-item list-group-item-action">Reservas</a>
+
+    <!-- Enlace para revisar solicitudes de aprobación -->
+    <a routerLink="/reservas/aprobaciones" class="list-group-item list-group-item-action">Aprobaciones</a>
+
+    <!-- Enlace a reportes -->
+    <a routerLink="/reportes/labs" class="list-group-item list-group-item-action">Reportes</a>
+
+    <!-- Enlace al perfil del usuario -->
+    <a routerLink="/perfil" class="list-group-item list-group-item-action">Perfil</a>
+</div>

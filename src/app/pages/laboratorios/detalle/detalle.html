@@ -1,0 +1,60 @@
+<!-- Encabezado de la página -->
+<!-- Componente reutilizable con título y subtítulo -->
+<app-page-header titulo="Lab Redes B-203" subtitulo="Detalle y próximas franjas"></app-page-header>
+
+<!-- Estructura de dos columnas -->
+<div class="row g-3">
+
+    <!-- Columna izquierda: información y reservas -->
+    <div class="col-md-8">
+
+        <!-- Tarjeta con información del laboratorio -->
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <p><strong>Ubicación:</strong> Bloque B-203</p>
+                <p><strong>Capacidad:</strong> 20</p>
+                <p><strong>Descripción:</strong> Routers, switches y cableado estructurado.</p>
+            </div>
+        </div>
+
+        <!-- Tarjeta con próximas reservas -->
+        <div class="card shadow-sm mt-3">
+            <div class="card-header bg-light">
+                <strong>Próximas reservas</strong>
+            </div>
+
+            <!-- Lista de horarios reservados -->
+            <ul class="list-group list-group-flush">
+                <!-- Reserva 1 -->
+                <li class="list-group-item d-flex justify-content-between">
+                    10:00–12:00 — Tutoría
+                    <!-- Estado visual con componente personalizado -->
+                    <app-status-badge estado="APROBADA"></app-status-badge>
+                </li>
+
+                <!-- Reserva 2 -->
+                <li class="list-group-item d-flex justify-content-between">
+                    14:00–16:00 — Autónomo
+                    <app-status-badge estado="PENDIENTE"></app-status-badge>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Columna derecha: acciones -->
+    <div class="col-md-4">
+        <div class="card shadow-sm">
+            <div class="card-body d-grid gap-2">
+                <!-- Botón para crear una nueva reserva -->
+                <a routerLink="/reservas/nueva" class="btn btn-primary">
+                    Reservar laboratorio
+                </a>
+
+                <!-- Botón para volver al listado de laboratorios -->
+                <a routerLink="/laboratorios" class="btn btn-outline-secondary">
+                    Volver
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

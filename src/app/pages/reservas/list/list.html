@@ -1,0 +1,64 @@
+<!-- 
+======================================================
+ PÁGINA "MIS RESERVAS"
+======================================================
+Muestra el historial de reservas del usuario, su estado
+y permite filtrar o crear nuevas reservas.
+-->
+
+<!-- Encabezado de la página -->
+<app-page-header titulo="Mis reservas" subtitulo="Historial y estado"></app-page-header>
+
+<!-- Barra superior: filtros y botón nueva reserva -->
+<div class="d-flex justify-content-between mb-3">
+
+    <!-- Botones para filtrar las reservas -->
+    <div class="btn-group">
+        <button class="btn btn-outline-secondary btn-sm">Todas</button>
+        <button class="btn btn-outline-secondary btn-sm">Pendientes</button>
+        <button class="btn btn-outline-secondary btn-sm">Aprobadas</button>
+    </div>
+
+    <!-- Botón para crear una nueva reserva -->
+    <a routerLink="/reservas/nueva" class="btn btn-primary">
+        <i class="bi bi-plus-circle me-1"></i>Nueva reserva
+    </a>
+</div>
+
+<!-- Tabla con las reservas -->
+<div class="table-responsive card shadow-sm">
+    <table class="table align-middle mb-0">
+
+        <!-- Encabezado de la tabla -->
+        <thead class="table-light">
+            <tr>
+                <th>ID</th>
+                <th>Tipo</th>
+                <th>Recurso</th>
+                <th>Periodo</th>
+                <th>Estado</th>
+                <th></th>
+                <!-- Columna de acciones -->
+            </tr>
+        </thead>
+
+        <!-- Cuerpo de la tabla -->
+        <!-- *ngFor recorre las reservas del usuario -->
+        <tbody>
+            <tr *ngFor="let r of [1,2,3]">
+                <td>#1001</td>
+                <td>Tutoría</td>
+                <td>Lab Redes</td>
+                <td>15/10 10:00–12:00</td>
+                <td>
+                    <!-- Muestra el estado visualmente -->
+                    <app-status-badge estado="APROBADA"></app-status-badge>
+                </td>
+                <td class="text-end">
+                    <!-- Botón para cancelar la reserva -->
+                    <button class="btn btn-sm btn-outline-danger">Cancelar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,105 @@
+<!-- 
+======================================================
+ FORMULARIO DE REGISTRO DE USUARIO (CREAR CUENTA)
+======================================================
+Diseño con Bootstrap y formulario reactivo de Angular.
+Permite crear una nueva cuenta con validaciones básicas.
+-->
+
+<!-- Contenedor principal centrado en pantalla -->
+<div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center bg-light">
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-10 col-xl-8">
+
+                <!-- Tarjeta: imagen + formulario -->
+                <div class="shadow-lg rounded-4 overflow-hidden bg-white">
+                    <div class="row g-0">
+
+                        <!-- 
+                            Columna izquierda: imagen decorativa 
+                            Solo visible en pantallas medianas en adelante
+                        -->
+                        <div class="col-md-6 d-none d-md-block">
+                            <img src="img/campus.png" alt="Campus UTMACH" class="img-fluid w-100 h-100 object-fit-cover">
+                        </div>
+
+                        <!-- Columna derecha: formulario -->
+                        <div class="col-12 col-md-6">
+                            <div class="p-4 p-lg-5">
+
+                                <!-- Logo y título -->
+                                <div class="d-flex align-items-center mb-4">
+                                    <img src="img/logo.png" alt="Logo UTMACH" width="50" height="50" class="me-2">
+                                    <h5 class="m-0 fw-semibold fs-5">Crear cuenta</h5>
+                                </div>
+
+                                <!-- Formulario reactivo -->
+                                <!-- Usa [formGroup] para enlazar con el FormGroup en TypeScript -->
+                                <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate class="small">
+
+                                    <!-- Campo: Nombres -->
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted">Nombres</label>
+                                        <input formControlName="nombres" class="form-control form-control-sm rounded-pill py-2" placeholder="Ej: Kelly Samantha">
+                                        <!-- Mensaje de error -->
+                                        <div *ngIf="form.get('nombres')?.touched && form.get('nombres')?.invalid" class="text-danger small mt-1">
+                                            Ingrese sus nombres.
+                                        </div>
+                                    </div>
+
+                                    <!-- Campo: Apellidos -->
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted">Apellidos</label>
+                                        <input formControlName="apellidos" class="form-control form-control-sm rounded-pill py-2" placeholder="Ej: Cárdenas Chuquimarca">
+                                        <div *ngIf="form.get('apellidos')?.touched && form.get('apellidos')?.invalid" class="text-danger small mt-1">
+                                            Ingrese sus apellidos.
+                                        </div>
+                                    </div>
+
+                                    <!-- Campo: Correo institucional -->
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted">Correo institucional</label>
+                                        <input formControlName="email" type="email" class="form-control form-control-sm rounded-pill py-2" placeholder="usuario@utmachala.edu.ec">
+                                        <div *ngIf="form.get('email')?.touched && 
+                                                    (form.get('email')?.hasError('required') || 
+                                                     form.get('email')?.hasError('pattern'))" class="text-danger small mt-1">
+                                            Use su correo institucional @utmachala.edu.ec.
+                                        </div>
+                                    </div>
+
+                                    <!-- Campo: Contraseña -->
+                                    <div class="mb-4">
+                                        <label class="form-label text-muted">Contraseña</label>
+                                        <input formControlName="password" type="password" class="form-control form-control-sm rounded-pill py-2" placeholder="••••••••">
+                                        <div *ngIf="form.get('password')?.touched && form.get('password')?.invalid" class="text-danger small mt-1">
+                                            La contraseña debe tener mínimo 6 caracteres.
+                                        </div>
+                                    </div>
+
+                                    <!-- Botón de envío -->
+                                    <button type="submit" class="btn btn-success w-100 rounded-pill py-2 mb-3" [disabled]="form.invalid">
+                                        REGISTRARSE
+                                    </button>
+
+                                    <!-- Enlace a inicio de sesión -->
+                                    <div class="text-center">
+                                        <span class="text-muted small">¿Ya tienes cuenta?</span>
+                                        <a routerLink="/auth/login" class="small fw-semibold text-decoration-none ms-1">
+                                            Inicia sesión
+                                        </a>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /tarjeta -->
+
+            </div>
+        </div>
+    </div>
+</div>

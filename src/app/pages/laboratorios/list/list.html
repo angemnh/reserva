@@ -1,0 +1,27 @@
+<app-page-header titulo="Laboratorios" subtitulo="Disponibilidad y gestión"></app-page-header>
+
+<div class="d-flex justify-content-between mb-3">
+    <div class="input-group w-auto">
+        <span class="input-group-text"><i class="bi bi-search"></i></span>
+        <input class="form-control" placeholder="Buscar laboratorio...">
+    </div>
+    <a routerLink="/laboratorios/nuevo" class="btn btn-primary">
+        <i class="bi bi-plus-circle me-1"></i>Nuevo laboratorio
+    </a>
+</div>
+
+<div class="row g-3">
+    <div class="col-md-4" *ngFor="let lab of [1,2,3,4]">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Lab Redes B-203</h5>
+                <p class="mb-2 text-muted">Capacidad: 20 • Ubicación: Bloque B-203</p>
+                <app-status-badge estado="DISPONIBLE"></app-status-badge>
+            </div>
+            <div class="card-footer bg-white d-flex gap-2">
+                <a routerLink="/laboratorios/1" class="btn btn-outline-secondary btn-sm">Ver detalles</a>
+                <a routerLink="/reservas/nueva" class="btn btn-primary btn-sm">Reservar</a>
+            </div>
+        </div>
+    </div>
+</div>

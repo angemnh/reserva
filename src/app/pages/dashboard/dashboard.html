@@ -1,0 +1,72 @@
+<!-- 
+======================================================
+ PANEL PRINCIPAL (Dashboard)
+======================================================
+Muestra un resumen general de laboratorios, equipos y reservas.
+Incluye tarjetas informativas y una lista de próximas reservas.
+-->
+
+<!-- Encabezado reutilizable -->
+<!-- Componente que muestra título y subtítulo -->
+<app-page-header titulo="Panel principal" subtitulo="Resumen general"></app-page-header>
+
+<!-- Fila de tarjetas con estadísticas -->
+<div class="row g-3">
+
+    <!-- Tarjeta: Total de laboratorios -->
+    <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+            <div class="card-body">
+                <div class="text-muted">Total Laboratorios</div>
+                <div class="display-6">4</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tarjeta: Total de equipos -->
+    <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+            <div class="card-body">
+                <div class="text-muted">Total Equipos</div>
+                <div class="display-6">3</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tarjeta: Reservas activas -->
+    <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+            <div class="card-body">
+                <div class="text-muted">Reservas Activas</div>
+                <div class="display-6">3</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sección de próximas reservas -->
+<div class="card shadow-sm mt-3">
+    <div class="card-header bg-light">
+        <strong>Próximas reservas</strong>
+    </div>
+
+    <!-- Lista de reservas próximas -->
+    <div class="card-body p-0">
+        <ul class="list-group list-group-flush">
+
+            <!-- Elemento 1: Laboratorio de Redes -->
+            <li class="list-group-item d-flex justify-content-between">
+                <span>Lab Redes (B-203) — 10:00–12:00</span>
+                <!-- Estado mostrado con componente personalizado -->
+                <app-status-badge estado="APROBADA"></app-status-badge>
+            </li>
+
+            <!-- Elemento 2: Equipo Proyector Epson -->
+            <li class="list-group-item d-flex justify-content-between">
+                <span>Proyector Epson — 14:00–16:00</span>
+                <app-status-badge estado="PENDIENTE"></app-status-badge>
+            </li>
+
+        </ul>
+    </div>
+</div>

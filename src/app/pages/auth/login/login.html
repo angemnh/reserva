@@ -1,0 +1,88 @@
+<!-- 
+======================================================
+ PANTALLA DE LOGIN (Formulario de acceso)
+======================================================
+Estructura con Bootstrap para centrar el formulario
+de inicio de sesión y mostrar una imagen lateral.
+Incluye validación básica del correo institucional.
+-->
+
+<!-- Contenedor principal centrado vertical y horizontalmente -->
+<div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center bg-light">
+
+    <!-- Contenedor con ancho controlado -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-10 col-xl-8">
+
+                <!-- Tarjeta: imagen a la izquierda + formulario a la derecha -->
+                <div class="shadow-lg rounded-4 overflow-hidden bg-white">
+                    <div class="row g-0">
+
+                        <!-- 
+                            Columna izquierda: imagen decorativa 
+                            - Visible solo desde pantallas medianas (d-md-block)
+                            - Ocupa 6 columnas del ancho
+                        -->
+                        <div class="col-md-6 d-none d-md-block">
+                            <img src="img/campus.png" alt="Campus UTMACH" class="img-fluid w-100 h-100 object-fit-cover">
+                        </div>
+
+                        <!-- 
+                            Columna derecha: formulario de acceso 
+                            - Ocupa todo el ancho en móvil, 6 columnas en escritorio
+                        -->
+                        <div class="col-12 col-md-6">
+                            <div class="p-4 p-lg-5 small">
+
+                                <!-- Logo y título de la app -->
+                                <div class="d-flex align-items-center mb-4">
+                                    <img src="img/logo.png" alt="Logo UTMACH" width="50" height="50" class="me-2">
+                                    <h5 class="m-0 fw-semibold fs-5">U-RESERVA</h5>
+                                </div>
+
+                                <!-- Formulario de inicio de sesión -->
+                                <!-- Usa template-driven forms con ngModel -->
+                                <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+
+                                    <!-- Campo de correo institucional -->
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted">Correo institucional</label>
+                                        <input type="email" class="form-control form-control-sm rounded-pill py-2" name="email" [(ngModel)]="email" placeholder="usuario@utmachala.edu.ec" pattern="^[a-zA-Z0-9._%+\-]+@utmachala\.edu\.ec$" required>
+                                    </div>
+
+                                    <!-- Campo de contraseña -->
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted">Contraseña</label>
+                                        <input type="password" class="form-control form-control-sm rounded-pill py-2" name="password" [(ngModel)]="password" placeholder="••••••••" required>
+                                    </div>
+
+                                    <!-- Mensaje de alerta (éxito o error de login) -->
+                                    <div *ngIf="alerta.tipo" class="alert" [ngClass]="{
+                                           'alert-success': alerta.tipo==='success',
+                                           'alert-danger': alerta.tipo==='danger'
+                                         }">
+                                        {{ alerta.msg }}
+                                    </div>
+
+                                    <!-- Botón para enviar el formulario -->
+                                    <button type="submit" class="btn btn-primary w-100 rounded-pill py-2 mb-3">
+                                        ACCEDER
+                                    </button>
+
+                                    <!-- Enlace para crear una nueva cuenta -->
+                                    <div class="text-center">
+                                        <span class="text-muted small">¿No tienes cuenta?</span>
+                                        <a routerLink="/auth/register" class="small fw-semibold text-decoration-none ms-1">
+                                            Crear una cuenta
+                                        </a>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>

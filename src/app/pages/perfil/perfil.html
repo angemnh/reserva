@@ -1,0 +1,52 @@
+<!-- 
+======================================================
+ PÁGINA "MI PERFIL"
+======================================================
+Muestra la información del usuario actual y permite editar los datos básicos.
+Usa un diseño con tarjetas (cards) y el componente de encabezado reutilizable.
+-->
+
+<!-- Encabezado con título y subtítulo -->
+<app-page-header titulo="Mi perfil" subtitulo="Configuración de cuenta"></app-page-header>
+
+<!-- Tarjeta contenedora del formulario -->
+<div class="card shadow-sm">
+    <div class="card-body">
+
+        <!-- Formulario del perfil -->
+        <div class="row g-3">
+            <!-- Campo: Nombres -->
+            <div class="col-md-6">
+                <label class="form-label">Nombres</label>
+                <input class="form-control" value="Ingrese un nombre">
+            </div>
+
+            <!-- Campo: Apellidos -->
+            <div class="col-md-6">
+                <label class="form-label">Apellidos</label>
+                <input class="form-control" value="Cardenas">
+            </div>
+
+            <!-- Campo: Correo (solo lectura) -->
+            <div class="col-md-6">
+                <label class="form-label">Correo</label>
+                <input class="form-control" value="kelly@utm.edu.ec" disabled>
+            </div>
+
+            <!-- Campo: Rol (solo lectura) -->
+            <div class="col-md-6">
+                <label class="form-label">Rol</label>
+                <input class="form-control" value="Estudiante" disabled>
+            </div>
+        </div>
+
+        <!-- Botones inferiores -->
+        <div class="d-flex gap-2 mt-3">
+            <!-- Botón para guardar los cambios -->
+            <button class="btn btn-primary">Guardar</button>
+            <!-- Botón para volver al panel principal -->
+            <a routerLink="/dashboard" class="btn btn-outline-secondary">Volver</a>
+        </div>
+
+    </div>
+</div>

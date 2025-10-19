@@ -1,0 +1,27 @@
+<!-- Contenedor principal con margen inferior -->
+<div class="mb-3">
+
+    <!-- 
+        TÍTULO PRINCIPAL DE LA SECCIÓN
+        - <h3>: tamaño medio-grande para encabezados.
+        - {{titulo}}: muestra el valor de la variable 'titulo' definida en el archivo .ts del componente.
+        - class="mb-0": elimina el margen inferior del título para acercarlo al subtítulo.
+    -->
+    <h3 class="mb-0">{{titulo}}</h3>
+
+    <!-- 
+        SUBTÍTULO DE LA SECCIÓN
+        - <small>: texto más pequeño que el título.
+        - class="text-muted": color gris tenue (Bootstrap).
+        - {{subtitulo}}: muestra el valor de la variable 'subtitulo' definida en el archivo .ts del componente.
+    -->
+    <small class="text-muted">{{subtitulo}}</small>
+
+    <!-- 
+        LÍNEA DIVISORIA (separa la cabecera del contenido siguiente)
+        - <hr>: crea una línea horizontal.
+        - class="mt-2": añade un pequeño margen superior para espacio visual.
+    -->
+    <hr class="mt-2">
+
+</div>

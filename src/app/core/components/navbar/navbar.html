@@ -1,0 +1,61 @@
+<!-- Barra de navegación principal -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+
+        <!-- LOGO O TÍTULO DEL SISTEMA -->
+        <!-- 'routerLink="/dashboard"' redirige al panel principal -->
+        <a class="navbar-brand fw-semibold" routerLink="/dashboard">
+            <!-- Icono de Bootstrap Icons (bi-hdd-stack) y nombre del sistema -->
+            <i class="bi bi-hdd-stack me-1"></i>U-Reservas
+        </a>
+
+        <!-- BOTÓN HAMBURGUESA (solo visible en pantallas pequeñas) -->
+        <!-- Permite colapsar o expandir el menú -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- CONTENEDOR DE LOS ELEMENTOS DEL MENÚ -->
+        <div id="navMain" class="collapse navbar-collapse">
+
+            <!-- LISTA DE ENLACES PRINCIPALES -->
+            <!-- 'routerLink' sirve para navegar entre rutas de Angular -->
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/laboratorios">Laboratorios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/equipos">Equipos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/reservas">Reservas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/reportes/labs">Reportes</a>
+                </li>
+            </ul>
+
+            <!-- SECCIÓN DERECHA (BOTONES DE PERFIL Y SALIR) -->
+            <div class="d-flex gap-2">
+
+                <!-- NAVBAR INTERNO (NO ES NECESARIO REPETIRLO, PERO AQUÍ SE INCLUYE COMO CONTENEDOR VISUAL) -->
+                <nav class="navbar navbar-expand-lg navbar-dark bg-primary px-3">
+
+                    <!-- LOGO PEQUEÑO EN LA SECCIÓN DERECHA -->
+                    <a class="navbar-brand" routerLink="/dashboard">U-Reservas</a>
+
+                    <!-- BOTONES VISIBLES SOLO SI EL USUARIO ESTÁ LOGEADO -->
+                    <!-- 'auth.isLoggedIn()' es una función del servicio de autenticación -->
+                    <div class="ms-auto" *ngIf="auth.isLoggedIn()">
+                        <!-- Enlace al perfil del usuario -->
+                        <a class="btn btn-outline-light btn-sm me-2" routerLink="/perfil">Perfil</a>
+
+                        <!-- Botón para cerrar sesión -->
+                        <!-- Ejecuta la función salir() definida en el componente -->
+                        <button class="btn btn-light btn-sm" (click)="salir()">Salir</button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</nav>

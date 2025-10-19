@@ -1,0 +1,47 @@
+<!-- 
+===============================================
+ ESTRUCTURA PRINCIPAL DEL LAYOUT (DISEÑO BASE)
+===============================================
+Incluye el navbar superior, el sidebar lateral
+y el área principal donde se cargan las vistas.
+Usa Bootstrap para el diseño responsivo.
+-->
+
+<!-- Componente de la barra superior -->
+<app-navbar></app-navbar>
+
+<!-- Contenedor fluido para ocupar todo el ancho -->
+<div class="container-fluid">
+    <div class="row">
+
+        <!-- 
+            COLUMNA LATERAL (SIDEBAR)
+            - Solo visible en pantallas grandes (d-none d-lg-block)
+            - Ocupa 2 columnas del grid Bootstrap
+            - border-end: agrega borde derecho
+            - p-0: sin padding para ajustar el contenido
+        -->
+        <aside class="d-none d-lg-block col-lg-2 border-end p-0">
+            <!-- Componente del menú lateral -->
+            <app-sidebar></app-sidebar>
+        </aside>
+
+        <!-- 
+            COLUMNA PRINCIPAL (CONTENIDO)
+            - Ocupa todo el ancho en pantallas pequeñas (col-12)
+            - Ocupa 10 columnas en pantallas grandes (col-lg-10)
+            - p-3: agrega espacio interno
+            - bg-light: fondo gris claro
+            - min-vh-100: mínimo alto igual al alto de la ventana
+        -->
+        <main class="col-12 col-lg-10 p-3 bg-light min-vh-100">
+
+            <!-- 
+                router-outlet:
+                Aquí Angular carga dinámicamente los componentes
+                según la ruta actual (por ejemplo /dashboard, /reservas, etc.)
+            -->
+            <router-outlet></router-outlet>
+        </main>
+    </div>
+</div>

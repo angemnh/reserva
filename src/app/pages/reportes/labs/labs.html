@@ -1,0 +1,48 @@
+<!-- 
+======================================================
+ PÁGINA DE REPORTES DE LABORATORIOS
+======================================================
+Muestra un resumen visual del uso de los laboratorios.
+Incluye secciones para gráficos de ocupación y laboratorios más usados.
+-->
+
+<!-- Encabezado de la página -->
+<!-- Componente reutilizable con título y subtítulo -->
+<app-page-header titulo="Reportes de laboratorios" subtitulo="Uso por franja y ocupación"></app-page-header>
+
+<!-- Fila principal que contiene dos columnas -->
+<div class="row g-3">
+
+    <!-- Columna izquierda: gráfico de ocupación semanal -->
+    <div class="col-md-4">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <!-- Título de la sección -->
+                <h6 class="mb-3">Ocupación semanal</h6>
+
+                <!-- Espacio reservado para gráfico -->
+                <!-- ratio-16x9 mantiene proporción 16:9 -->
+                <div class="ratio ratio-16x9 bg-light rounded d-flex align-items-center justify-content-center text-muted">
+                    Gráfico (placeholder)
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Columna derecha: gráfico de top laboratorios -->
+    <div class="col-md-8">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <!-- Título de la sección -->
+                <h6 class="mb-3">Top laboratorios</h6>
+
+                <!-- Espacio reservado para gráfico de barras -->
+                <!-- ratio-21x9 da una forma panorámica -->
+                <div class="ratio ratio-21x9 bg-light rounded d-flex align-items-center justify-content-center text-muted">
+                    Barras (placeholder)
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
